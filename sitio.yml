@@ -1,0 +1,18 @@
+# Lo único obligatorio es el nombre y la dirección del sitio, sin ruta
+nombre: Mi sitio
+url: https://ejemplo.com
+
+formato: 1
+idioma: es
+zonaHoraria: Europe/Madrid
+
+# Para publicar con `php vendor/bin/ehundu desplegar`, descomenta y rellena esta sección.
+# La contraseña no va aquí, que se comparte y se versiona: va en un fichero .secretos.yml
+# (ver el README.md).
+#
+# despliegue:
+#   destino: sftp
+#   servidor: sftp.ejemplo.com
+#   usuario: usuario
+#   ruta: /home/usuario/www
+#   huella: SHA256:...   # la da el primer despliegue; compruébala con quien administra el servidor

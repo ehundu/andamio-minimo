@@ -1,0 +1,12 @@
+<header class="cabecera">
+  <div class="contenedor cabecera__barra">
+    <a class="cabecera__nombre" href="/">{{ datos.cliente.nombre }}</a>
+    <nav aria-label="Principal">
+      <ul>
+        <li><a href="/"{% if activo('/') %} aria-current="page"{% endif %}>Inicio</a></li>
+        <li><a href="/servicios/"{% if activo('/servicios/') %} aria-current="page"{% endif %}>Servicios</a></li>
+        <li><a href="/contacto/"{% if activo('/contacto/') %} aria-current="page"{% endif %}>Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

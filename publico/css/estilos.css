@@ -1,0 +1,180 @@
+/* Los estilos del sitio, en un solo fichero. Los colores y las medidas están arriba, en variables:
+   cambiando esas líneas cambia el aspecto de todo. Respeta el modo oscuro del sistema. */
+
+:root {
+  --fondo: #fbfaf7;
+  --tinta: #1f2328;
+  --texto: #464b52;
+  --apagado: #6b7077;
+  --acento: #a63d2f;
+  --linea: #e2ded6;
+  --codigo: #efebe3;
+
+  --tipo: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --ancho: 44rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fondo: #17181a;
+    --tinta: #f2f0eb;
+    --texto: #c9c6bf;
+    --apagado: #99968f;
+    --acento: #e88b77;
+    --linea: #34363a;
+    --codigo: #25272a;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--texto);
+  font: 1.0625rem/1.65 var(--tipo);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--tinta);
+  line-height: 1.15;
+}
+
+h1 {
+  margin: 0 0 1.25rem;
+  font-size: clamp(2rem, 4vw + 1rem, 3rem);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  margin: 2.25rem 0 0.5rem;
+  font-size: 1.5rem;
+}
+
+a {
+  color: var(--acento);
+}
+
+/* Siempre se ve dónde está el foco del teclado */
+:focus-visible {
+  outline: 3px solid var(--acento);
+  outline-offset: 3px;
+}
+
+.contenedor {
+  width: min(100% - 2rem, var(--ancho));
+  margin-inline: auto;
+}
+
+.oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* El enlace para saltar al contenido: solo se ve al llegar a él con el teclado */
+.saltar {
+  position: absolute;
+  top: -4rem;
+  left: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--tinta);
+  color: var(--fondo);
+  z-index: 10;
+}
+
+.saltar:focus {
+  top: 1rem;
+}
+
+.cabecera {
+  border-bottom: 1px solid var(--linea);
+}
+
+.cabecera__barra {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding-block: 1rem;
+}
+
+.cabecera__nombre {
+  color: var(--tinta);
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.cabecera ul {
+  display: flex;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cabecera nav a {
+  color: var(--texto);
+  text-decoration: none;
+}
+
+.cabecera nav a:hover,
+.cabecera nav a[aria-current="page"] {
+  color: var(--tinta);
+  text-decoration: underline;
+  text-underline-offset: 0.35em;
+}
+
+.pagina {
+  padding-block: 3rem 4rem;
+}
+
+.prosa > :first-child {
+  margin-top: 0;
+}
+
+.prosa p,
+.prosa ul,
+.prosa ol {
+  margin: 1rem 0 0;
+}
+
+.prosa code {
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  background: var(--codigo);
+  font: 0.875em var(--mono);
+}
+
+.pie {
+  padding-block: 2rem;
+  border-top: 1px solid var(--linea);
+  color: var(--apagado);
+  font-size: 0.9375rem;
+}
+
+.pie p {
+  margin: 0.25rem 0;
+}
