@@ -2,6 +2,8 @@
 
 Un sitio de presentación de cuatro páginas (inicio, servicios, contacto y la página de error), hecho con [Ehundu](https://ehundu.com), el generador de sitios estáticos en PHP. Es un andamio: la estructura de partida de un sitio pequeño. Cambias los textos, los datos y el CSS, y es tuyo.
 
+Puedes verlo funcionando, sin instalar nada, en [andamio-minimo.ehundu.com](https://andamio-minimo.ehundu.com/).
+
 Necesitas PHP 8.4 o superior y [Composer](https://getcomposer.org).
 
 ## Empezar
